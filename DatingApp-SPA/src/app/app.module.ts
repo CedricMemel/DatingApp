@@ -19,6 +19,7 @@ import { RegisterComponent } from "./register/register.component";
 import { ListsComponent } from "./lists/lists.component";
 import { MessagesComponent } from "./messages/messages.component";
 import { MemberListComponent } from "./member-list/member-list.component";
+import { AuthGuard } from "./_guards/auth.guard";
 
 
 @NgModule({
@@ -39,6 +40,9 @@ import { MemberListComponent } from "./member-list/member-list.component";
     RouterModule.forRoot(appRoutes)
   ],
   bootstrap: [AppComponent],
-  providers: [AuthService, ErrorInterceptorProvider, AlertifyService]
+  providers: [AuthService,
+  ErrorInterceptorProvider,
+  AlertifyService,
+  AuthGuard]
 })
 export class AppModule {}
